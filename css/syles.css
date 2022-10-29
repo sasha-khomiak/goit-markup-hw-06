@@ -1,0 +1,788 @@
+/*----VARIABLES----*/
+
+:root {
+  /* text color */
+  --main-text-color: #757575;
+  --important-text-color: #212121;
+  --accent-text-color: #2196f3;
+  --hero-text-color: #ffffff;
+  --transperent-footer-color: rgba(255, 255, 255, 0.6);
+  --address-footer-color: #ffffff;
+  --white-text-color: #ffffff;
+  --black-text-color: #000000;
+
+  /* fill color */
+  --background-first-color: #2f303a;
+  --background-second-color: #f5f4fa;
+  --background-white-color: #ffffff;
+
+  /* fill icons */
+  --fill-grey-icon-color: #afb1b8;
+
+  /* button color */
+  --blue-button-color: #2196f3;
+  --blue-button-active-color: #188ce8;
+  --grey-button-color: #f5f4fa;
+
+  --header-border: #ececec;
+  --portfolio-border: #eeeeee;
+}
+
+/*----BODY----*/
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--main-text-color);
+}
+
+/*----LINK AND LIST NONEDECORATION AND HIDDEN----*/
+
+.link {
+  text-decoration: none;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+/*----POSITIONS FOR CONTAINERS----*/
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  /* outline: 2px solid tomato; */
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+/*----HEADER----*/
+
+.header {
+  border-bottom: 1px solid var(--header-border);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  margin-right: 93px;
+
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+
+  color: var(--accent-text-color);
+}
+
+.header-logo-alt {
+  color: var(--black-text-color);
+}
+
+.header-list-main {
+  display: flex;
+}
+
+.header-list-second {
+  display: flex;
+  margin-left: auto;
+}
+
+.header-list-main-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.header-list-second-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.header-link-main {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 31px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  color: var(--important-text-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.header-link-main:hover,
+.header-link-main:focus {
+  color: var(--accent-text-color);
+}
+
+.header-active-page::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-text-color);
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+}
+
+.header-link-second {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  color: var(--main-text-color);
+
+  display: flex;
+  align-items: center;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-link-second:hover,
+.header-link-second:focus {
+  color: var(--accent-text-color);
+}
+
+.header-list-second-icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+/*----HERO----*/
+
+.hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
+
+  background-color: var(--background-first-color);
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/bg-hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-size: cover; */
+
+  text-align: center;
+}
+
+.hero-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: var(--hero-text-color);
+}
+
+.hero-btn {
+  min-width: 216px; /* ???? Чи треба? */
+  padding: 10px 32px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  color: var(--hero-text-color);
+  background-color: var(--blue-button-color);
+
+  border: 0px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  cursor: pointer;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+  background-color: var(--blue-button-active-color);
+}
+
+/*----MODAL WINDOW----*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  /* z-index тому,що по верстці модалка вище "Чим ми займаємося" стоїть, треба або z-index поставити більше, або перемістити модалку у верстці нижче секції "Чим ми займаємося". я вибрав перший варіант. але це ж не проблема */
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  min-width: 528px;
+  min-height: 581px;
+  background-color: var(--background-white-color);
+  padding: 15px;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 1;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
+  opacity: 0;
+}
+
+.modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.modal-btn-icon {
+  fill: var(--black-text-color);
+}
+
+.modal > p {
+  text-align: center;
+}
+
+/*----COMMON SECTIONS HEADER----*/
+
+.section-header {
+  margin-bottom: 50px;
+
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--important-text-color);
+}
+
+/*----ADVANTAGES----*/
+
+.advantages {
+  padding-top: 94px;
+  /*треба було тільки в одному блоці обрати відступ 94px - так сказала ментор Наталія, я обрав у наступному*/
+}
+
+.advantages-list {
+  display: flex;
+}
+
+.advantages-list-item {
+  width: 270px;
+}
+
+.advantages-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.advantages-list-icon {
+  height: 120px;
+  margin-bottom: 30px;
+  background-color: var(--background-second-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.advantages-icon {
+  width: 70px;
+  height: 70px;
+}
+
+.advantages-header {
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--important-text-color);
+
+  margin-bottom: 10px;
+}
+
+.advantages-review {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+
+/*----ACTIVITY----*/
+
+.activity-list {
+  display: flex;
+}
+
+.activity-list-item {
+  position: relative;
+}
+
+.activity-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.activity-list-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.activity-list-hdr {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--white-text-color);
+
+  width: 100%;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+/*----TEAM----*/
+
+.team {
+  background: var(--background-second-color);
+}
+
+.team-list {
+  display: flex;
+}
+
+.team-list-item {
+  padding-bottom: 30px;
+  width: 270px;
+
+  background: var(--background-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.team-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.team-list-photo {
+  margin-bottom: 30px;
+  max-width: 100%;
+  height: auto;
+}
+
+.team-name {
+  margin-bottom: 10px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--important-text-color);
+}
+
+.team-position {
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 16px;
+}
+
+.team-social-list {
+  display: flex;
+  justify-content: center;
+}
+
+.team-social-item {
+  margin-right: 10px;
+}
+
+.team-social-linl {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  color: var(--fill-grey-icon-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-social-linl:hover,
+.team-social-linl:focus {
+  background-color: var(--blue-button-color);
+  color: var(--white-text-color);
+}
+
+.team-social-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/*----CLIENT----*/
+
+.client-list {
+  display: flex;
+}
+
+.client-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.client-list-link {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--fill-grey-icon-color);
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  color: var(--fill-grey-icon-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.client-list-link:hover,
+.client-list-link:focus {
+  border-color: var(--accent-text-color);
+  color: var(--accent-text-color);
+}
+
+.client-icon {
+  fill: currentColor;
+}
+
+/*----FOOTER----*/
+
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  background: var(--background-first-color);
+}
+
+.footer-block {
+  display: flex;
+}
+
+.footer-maininfo {
+  margin-right: 70px;
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 20px;
+
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+
+  color: var(--accent-text-color);
+}
+
+.footer-logo-alt {
+  color: var(--white-text-color);
+}
+
+.footer-address {
+  font-style: normal;
+}
+
+.footer-list-item {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+
+  color: var(--transperent-footer-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-list-item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.footer-list-address {
+  color: var(--address-footer-color);
+}
+
+.footer-list-item:hover,
+.footer-list-item:focus {
+  color: var(--white-text-color);
+}
+
+.footer-social-title {
+  margin-top: 12px;
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--white-text-color);
+}
+
+.footer-list-social {
+  display: flex;
+}
+
+.footer-list-social-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-list-social-link {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-list-social-link:hover,
+.footer-list-social-link:focus {
+  background-color: var(--blue-button-color);
+}
+
+.footer-social-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--white-text-color);
+}
+
+/*----PORTFOLIO----*/
+
+.portfolio-list-btn {
+  display: flex;
+  margin-bottom: 50px;
+  justify-content: center;
+}
+
+.portfolio-list-btn-item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.portfolio-btn {
+  padding: 6px 22px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--important-text-color);
+  background-color: var(--grey-button-color);
+
+  border: 0px;
+  border-radius: 4px;
+
+  cursor: pointer;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-btn.first-btn {
+  padding: 6px 25px;
+}
+
+.portfolio-btn:hover,
+.portfolio-btn:focus {
+  color: var(--address-footer-color);
+  background-color: var(--blue-button-color);
+
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-list-project {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio-list-project-item {
+  width: 370px;
+  /* width: ((100% - 60px) / 3); */
+  margin-right: 30px;
+  margin-bottom: 30px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-list-project-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio-list-project-item:nth-last-child(-n + 3) {
+  margin-bottom: 0px;
+}
+
+.portfolio-list-project-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.portfolio-item-cover {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-list-project-item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.portfolio-item-background {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  background-color: rgba(33, 150, 243, 0.9);
+  height: 100%;
+
+  transform: translateY(295px);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-list-project-item:hover .portfolio-item-background {
+  transform: translateY(0%);
+}
+
+.portfolio-item-text {
+  font-size: 18px;
+  line-height: calc(28 / 18);
+  letter-spacing: 0.03em;
+  color: var(--white-text-color);
+  text-align: center;
+}
+
+.portfolio-list-project-text {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  border-left: 1px solid var(--portfolio-border);
+  border-right: 1px solid var(--portfolio-border);
+  border-bottom: 1px solid var(--portfolio-border);
+}
+
+.portfolio-list-header {
+  margin-bottom: 4px;
+
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+
+  color: var(--important-text-color);
+}
+
+.portfolio-list-category {
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.03em;
+}
